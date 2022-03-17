@@ -1,17 +1,17 @@
 class Varasto:
-    def __init__(self, tilavuus_too_long_test_for_pylint_tilavuus_too_long_test_for_pylint, alku_saldo=0):
+    def __init__(self, tilavuus, alku_saldo=0):
 
-        self.tilavuus = 0.0 if tilavuus_too_long_test_for_pylint_tilavuus_too_long_test_for_pylint < 0.0 else tilavuus_too_long_test_for_pylint_tilavuus_too_long_test_for_pylint
+        self.tilavuus = 0.0 if tilavuus < 0.0 else tilavuus
 
         if alku_saldo < 0.0:
             # virheellinen, nollataan
             self.saldo = 0.0
-        elif alku_saldo <= tilavuus_too_long_test_for_pylint_tilavuus_too_long_test_for_pylint:
+        elif alku_saldo <= tilavuus:
             # mahtuu
             self.saldo = alku_saldo
         else:
             # täyteen ja ylimäärä hukkaan!
-            self.saldo = tilavuus_too_long_test_for_pylint_tilavuus_too_long_test_for_pylint
+            self.saldo = tilavuus
 
     # huom: ominaisuus voidaan myös laskea. Ei tarvita erillistä kenttää viela_tilaa tms.
     def paljonko_mahtuu(self):
